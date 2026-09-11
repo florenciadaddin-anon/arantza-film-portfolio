@@ -23,52 +23,142 @@ body {
    HEADER
 ========================= */
 
-.header {
-  width: 100%;
-  height: 80px;
+/* =========================
+   HEADER
+========================= */
 
-  display: flex;
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: 100;
+
+  width: 100%;
+  height: 100px;
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
 
   padding: 0 5%;
 
-  background: #ffffff;
-  color: #111111;
+  color: #ffffff;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
 
-.header__logo {
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
 
-.header__nav {
+/* NOMBRE */
+
+.header__brand {
+  width: fit-content;
+
   display: flex;
-  gap: 32px;
-}
+  flex-direction: column;
 
-.header__nav a {
-  color: #111111;
+  color: #ffffff;
   text-decoration: none;
 
   font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
+  font-weight: 700;
+
+  line-height: 1.1;
+  letter-spacing: 3px;
+
+  transition: opacity 0.3s ease;
 }
 
-.header__contact {
-  text-decoration: none;
+.header__surname {
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.header__brand:hover {
+  opacity: 0.6;
+}
+
+
+/* NAVEGACIÓN */
+
+.header__nav {
+  display: flex;
+  align-items: center;
+
+  gap: 45px;
+}
+
+.header__nav a {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 10px 0;
+
   color: #ffffff;
-  background: #111111;
+  text-decoration: none;
 
-  padding: 12px 20px;
-
+  font-size: 0.7rem;
   text-transform: uppercase;
-  font-size: 0.75rem;
-  letter-spacing: 1.5px;
+
+  letter-spacing: 2px;
 }
 
+.header__nav a span {
+  font-size: 0.5rem;
+  opacity: 0.45;
+}
+
+
+/* ANIMACIÓN AL PASAR EL MOUSE */
+
+.header__nav a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 3px;
+
+  width: 0;
+  height: 1px;
+
+  background: #ffffff;
+
+  transition: width 0.35s ease;
+}
+
+.header__nav a:hover::after {
+  width: 100%;
+}
+
+
+/* UBICACIÓN */
+
+.header__location {
+  justify-self: end;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  font-size: 0.6rem;
+
+  letter-spacing: 2px;
+}
+
+.header__dot {
+  width: 6px;
+  height: 6px;
+
+  background: #ffffff;
+
+  border-radius: 50%;
+}
 
 /* =========================
    HERO
