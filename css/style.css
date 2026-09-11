@@ -321,6 +321,12 @@ body {
     background 0.3s ease,
     color 0.3s ease,
     transform 0.3s ease;
+
+
+    .project-card__play {
+  text-decoration: none;
+  color: white;
+}
 }
 
 
@@ -371,4 +377,20 @@ body {
     grid-column: auto;
   }
 
+}
+
+.project-card__play {
+  position: relative;
+  z-index: 10;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.project-card__overlay {
+  pointer-events: none;
+}
+
+.project-card__play {
+  pointer-events: auto;
 }
