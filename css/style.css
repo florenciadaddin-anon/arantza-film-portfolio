@@ -1027,6 +1027,58 @@ body {
 
 
 /* =========================
+   ANIMACIONES GENERALES
+========================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(45px);
+
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* entrada desde izquierda */
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-50px);
+
+  transition:
+    opacity 1s ease,
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* entrada desde derecha */
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(50px);
+
+  transition:
+    opacity 1s ease,
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* =========================
    RESPONSIVE
 ========================= */
 
