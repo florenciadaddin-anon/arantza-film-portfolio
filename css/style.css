@@ -152,6 +152,8 @@ body {
 }
 
 .header__dot {
+  position: relative;
+
   width: 6px;
   height: 6px;
 
@@ -160,6 +162,56 @@ body {
   border-radius: 50%;
 }
 
+
+.header__dot::after {
+  content: "";
+
+  position: absolute;
+
+  inset: -5px;
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+
+  animation: locationPulse 2.5s ease-out infinite;
+}
+
+
+@keyframes locationPulse {
+
+  0% {
+    transform: scale(0.5);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+
+}
+
+.header {
+  transition:
+    background 0.4s ease,
+    backdrop-filter 0.4s ease,
+    height 0.4s ease,
+    border-color 0.4s ease;
+}
+
+
+.header.header--scrolled {
+  position: fixed;
+
+  height: 72px;
+
+  background: rgba(10, 10, 10, 0.82);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
 /* =========================
    HERO
 ========================= */
@@ -279,10 +331,108 @@ body {
   opacity: 0.65;
 }
 
-
 /* =========================
-   PROJECTS
+   SCROLL INDICATOR
 ========================= */
+
+.scroll-indicator {
+  position: absolute;
+
+  right: 5%;
+  bottom: 35px;
+
+  z-index: 5;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 10px;
+
+  color: #ffffff;
+  text-decoration: none;
+}
+
+
+.scroll-indicator__text {
+  font-size: 0.55rem;
+
+  text-transform: uppercase;
+  letter-spacing: 4px;
+
+  writing-mode: vertical-rl;
+
+  opacity: 0.65;
+}
+
+
+.scroll-indicator__line {
+  position: relative;
+
+  width: 1px;
+  height: 55px;
+
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.25);
+}
+
+
+/* luz que recorre la línea */
+
+.scroll-indicator__line::after {
+  content: "";
+
+  position: absolute;
+
+  top: -100%;
+  left: 0;
+
+  width: 100%;
+  height: 70%;
+
+  background: #ffffff;
+
+  animation: scrollLine 2s ease-in-out infinite;
+}
+
+
+.scroll-indicator__arrow {
+  font-size: 1.2rem;
+
+  animation: scrollArrow 1.8s ease-in-out infinite;
+}
+
+
+@keyframes scrollLine {
+
+  0% {
+    top: -100%;
+  }
+
+  60% {
+    top: 100%;
+  }
+
+  100% {
+    top: 100%;
+  }
+
+}
+
+
+@keyframes scrollArrow {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(7px);
+  }
+
+}
 /* =========================
    PROJECTS
 ========================= */
@@ -1237,40 +1387,18 @@ body {
 
     padding: 40px 0;
   }
+}
+@media (prefers-reduced-motion: reduce) {
 
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
 
+    transition-duration: 0.01ms !important;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    scroll-behavior: auto !important;
+  }
 
 }
