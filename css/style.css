@@ -508,35 +508,63 @@ body {
    TITULO
 ========================= */
 
+/* =========================
+   INTRO SOBRE MI
+========================= */
+
 .about__intro {
-  position: relative;
+  display: grid;
 
-  padding: 100px 0 75px;
+  grid-template-columns: 1fr 1.2fr;
 
-  text-align: center;
+  gap: 80px;
+
+  align-items: end;
+
+  padding: 90px 8% 60px;
 }
 
-.about__small {
-  margin-bottom: 25px;
 
-  font-size: 0.65rem;
+/* TITULO */
+
+.about__intro-title span {
+  display: block;
+
+  margin-bottom: 15px;
+
+  font-size: 0.6rem;
+
   text-transform: uppercase;
-  letter-spacing: 5px;
+  letter-spacing: 4px;
 
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.4);
 }
 
-.about__intro h2 {
+
+.about__intro-title h2 {
   font-family: Georgia, "Times New Roman", serif;
 
-  font-size: clamp(4rem, 9vw, 9rem);
+  font-size: clamp(3rem, 5vw, 5.5rem);
 
   font-weight: 400;
   font-style: italic;
 
-  line-height: 0.88;
+  line-height: 1;
 
-  letter-spacing: -5px;
+  letter-spacing: -2px;
+}
+
+
+/* FRASE */
+
+.about__intro-text {
+  max-width: 600px;
+
+  font-size: clamp(1.1rem, 1.8vw, 1.6rem);
+
+  line-height: 1.45;
+
+  color: rgba(255, 255, 255, 0.65);
 }
 
 
