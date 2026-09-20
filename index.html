@@ -47,51 +47,70 @@
 
   <main>
 
-    <section class="hero">
+  <section class="hero">
 
-      <div class="hero__overlay"></div>
+  <div class="hero__meta">
+    <span>Realización Audiovisual</span>
+    <span>Portfolio / 2026</span>
+  </div>
 
-      <div class="hero__content">
 
-        <p class="hero__location">
-          Buenos Aires · Argentina
-        </p>
+  <div class="hero__composition">
 
-        <h1 class="hero__title">
-          ARANTZA
-          <span>BARRENECHEA</span>
-        </h1>
+    <h1 class="hero__name hero__name--top">
+      ARANTZA
+    </h1>
 
-      <div class="hero__identity">
 
-       <p class="hero__roles">
-    Producción · Arte · Edición
-      </p>
+    <figure class="hero__portrait">
 
-  <p class="hero__subtitle">
-    Producción  Audiovisual
-  </p>
+      <img
+        src="assets/arantza-hero.jpg"
+        alt="Retrato de Arantza Barrenechea"
+      >
 
-</div>
-        <a href="#trabajos" class="hero__button">
-          Ver trabajos
-        </a>
+      <figcaption>
+        Buenos Aires · Argentina
+      </figcaption>
 
-      </div>
- <a href="#trabajos" class="scroll-indicator">
+    </figure>
 
-  <span class="scroll-indicator__text">
-    Scroll
-  </span>
 
-  <span class="scroll-indicator__line"></span>
+    <h1 class="hero__name hero__name--bottom">
+      BARRENECHEA
+    </h1>
 
-  <span class="scroll-indicator__arrow">
-    ↓
-  </span>
 
-</a>
-    </section>
+    <div class="hero__roles">
+      <span>Producción</span>
+      <span>Arte</span>
+      <span>Edición</span>
+    </div>
+
+  </div>
+
+
+  <a href="#trabajos" class="hero__work">
+    Ver trabajos
+    <span>↘</span>
+  </a>
+
+
+  <a href="#trabajos" class="scroll-indicator">
+
+    <span class="scroll-indicator__text">
+      Scroll
+    </span>
+
+    <span class="scroll-indicator__line"></span>
+
+    <span class="scroll-indicator__arrow">
+      ↓
+    </span>
+
+  </a>
+
+</section>
 
 
    <section id="trabajos" class="projects">
@@ -104,11 +123,34 @@
       <span>2024 — 2026</span>
     </div>
   </div>
+<div class="projects__filters reveal">
 
+  <button class="filter-btn active" data-filter="all">
+    Todos <span>06</span>
+  </button>
+
+  <button class="filter-btn" data-filter="cortometraje">
+    Cortometrajes <span>03</span>
+  </button>
+
+  <button class="filter-btn" data-filter="videoclip">
+    Videoclips <span>01</span>
+  </button>
+
+  <button class="filter-btn" data-filter="pelicula">
+    Películas <span>01</span>
+  </button>
+
+  <button class="filter-btn" data-filter="publicidad">
+    Publicidad <span>01</span>
+  </button>
+
+</div>
   <div class="projects__grid">
 
     <!-- PUTAS -->
-    <article class="project-card project-card--wide reveal">
+    <article class="project-card project-card--wide reveal"
+    data-category="pelicula">
       <img
         src="assets/putas.png"
         alt="PUTAS"
@@ -135,7 +177,8 @@
 
 
     <!-- HOME EN SOLEDAD -->
-    <article class="project-card reveal">
+    <article class="project-card reveal"
+    data-category="videoclip">
       <img
         src="assets/soledad.png"
         alt="Home en Soledad"
@@ -162,7 +205,8 @@
 
 
     <!-- DULCE DESPEDIDA -->
-    <article class="project-card reveal">
+    <article class="project-card reveal"
+    data-category="cortometraje">
       <img
         src="assets/DD.png"
         alt="Dulce Despedida"
@@ -189,7 +233,8 @@
 
 
     <!-- BOCETO -->
-    <article class="project-card project-card--wide reveal">
+    <article class="project-card project-card--wide reveal"
+    data-category="cortometraje">
       <img
         src="assets/boceto.png"
         alt="Boceto"
@@ -216,7 +261,8 @@
 
 
     <!-- TELEPOP / NO ME ACUERDO -->
-    <article class="project-card project-card--large reveal">
+    <article class="project-card project-card--large reveal"
+    data-category="videoclip">
       <img
         src="assets/telepop.png"
         alt="Telepop"

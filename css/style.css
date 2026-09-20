@@ -215,120 +215,291 @@ body {
 /* =========================
    HERO
 ========================= */
+/* =========================
+   HERO
+========================= */
 
 .hero {
   position: relative;
 
-  min-height: calc(100vh - 80px);
+  min-height: 100vh;
 
+  padding: 135px 6% 45px;
+
+  background: #0b0b0b;
+  color: #ffffff;
+
+  overflow: hidden;
+}
+
+
+/* META SUPERIOR */
+
+.hero__meta {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 
-  text-align: center;
+  font-size: 0.58rem;
 
-  background:
-    url("../assets/images/hero.jpg")
-    center / cover no-repeat;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+
+  color: rgba(255, 255, 255, 0.5);
 }
 
-.hero__overlay {
-  position: absolute;
-  inset: 0;
 
-  background: rgba(0, 0, 0, 0.48);
-}
+/* COMPOSICIÓN CENTRAL */
 
-.hero__content {
+.hero__composition {
   position: relative;
+
+  width: min(1050px, 82vw);
+  height: calc(100vh - 220px);
+
+  min-height: 600px;
+
+  margin: 20px auto 0;
+}
+
+
+/* FOTO */
+
+.hero__portrait {
+  position: absolute;
+
   z-index: 2;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  top: 50%;
+  left: 50%;
+
+  width: clamp(280px, 28vw, 430px);
+  height: min(62vh, 650px);
+
+  margin: 0;
+
+  transform: translate(-50%, -50%);
+
+  overflow: hidden;
 }
 
-.hero__location {
-  margin-bottom: 20px;
 
-  text-transform: uppercase;
-  letter-spacing: 5px;
+.hero__portrait img {
+  width: 100%;
+  height: 100%;
 
-  font-size: 0.7rem;
-}
-
-.hero__title {
-  font-size: clamp(4rem, 10vw, 9rem);
-
-  line-height: 0.85;
-
-  text-transform: uppercase;
-  letter-spacing: -4px;
-}
-
-.hero__title span {
   display: block;
+
+  object-fit: cover;
+  object-position: center 35%;
+
+  transition:
+    transform 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.8s ease;
 }
 
-.hero__subtitle {
-  margin-top: 30px;
 
-  font-size: 0.9rem;
-
-  text-transform: uppercase;
-  letter-spacing: 6px;
+.hero__portrait:hover img {
+  transform: scale(1.025);
 }
 
-.hero__button {
-  margin-top: 35px;
 
-  padding: 15px 30px;
+.hero__portrait figcaption {
+  position: absolute;
 
-  background: #ffffff;
-  color: #111111;
+  left: 15px;
+  bottom: 14px;
 
-  text-decoration: none;
+  z-index: 3;
+
+  font-size: 0.52rem;
 
   text-transform: uppercase;
   letter-spacing: 2px;
 
-  font-size: 0.75rem;
-
-  transition: 0.3s;
+  color: rgba(255, 255, 255, 0.75);
 }
 
-.hero__button:hover {
-  background: #111111;
-  color: #ffffff;
+
+/* NOMBRE */
+
+.hero__name {
+  position: absolute;
+
+  z-index: 3;
+
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(5rem, 10vw, 10rem);
+
+  font-weight: 400;
+  font-style: italic;
+
+  line-height: 0.8;
+
+  letter-spacing: -7px;
+
+  white-space: nowrap;
+
+  pointer-events: none;
 }
-.hero__identity {
-  margin-top: 32px;
+
+
+.hero__name--top {
+  top: 8%;
+  left: 0;
+}
+
+
+.hero__name--bottom {
+  right: 0;
+  bottom: 6%;
+}
+
+
+/* ROLES */
+
+.hero__roles {
+  position: absolute;
+
+  z-index: 4;
+
+  right: 0;
+  top: 43%;
 
   display: flex;
   flex-direction: column;
+
+  gap: 7px;
+
+  font-size: 0.62rem;
+
+  text-transform: uppercase;
+  letter-spacing: 3px;
+
+  color: rgba(255, 255, 255, 0.75);
+}
+
+
+/* VER TRABAJOS */
+
+.hero__work {
+  position: absolute;
+
+  left: 6%;
+  bottom: 45px;
+
+  display: flex;
   align-items: center;
 
-  gap: 10px;
+  gap: 15px;
+
+  color: #ffffff;
+
+  font-size: 0.62rem;
+
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 3px;
 }
+
+
+.hero__work span {
+  font-size: 1rem;
+
+  transition: transform 0.3s ease;
+}
+
+
+.hero__work:hover span {
+  transform: translate(5px, 5px);
+}
+/* =========================
+   HERO INTRO
+========================= */
+
+.hero__portrait {
+  opacity: 0;
+
+  animation:
+    portraitEnter 1.2s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    0.25s forwards;
+}
+
+
+.hero__name--top {
+  opacity: 0;
+
+  animation:
+    nameEnterLeft 1.1s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    0.5s forwards;
+}
+
+
+.hero__name--bottom {
+  opacity: 0;
+
+  animation:
+    nameEnterRight 1.1s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    0.65s forwards;
+}
+
 
 .hero__roles {
-  font-size: 0.8rem;
+  opacity: 0;
 
-  font-weight: 600;
-
-  text-transform: uppercase;
-  letter-spacing: 5px;
+  animation:
+    heroFade 0.8s ease
+    0.9s forwards;
 }
 
-.hero__subtitle {
-  margin-top: 0;
 
-  font-size: 0.65rem;
+@keyframes portraitEnter {
 
-  text-transform: uppercase;
-  letter-spacing: 4px;
+  from {
+    opacity: 0;
+    transform: translate(-50%, -45%) scale(0.96);
+  }
 
-  opacity: 0.65;
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+}
+
+
+@keyframes nameEnterLeft {
+
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+}
+
+
+@keyframes nameEnterRight {
+
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
 }
 
 /* =========================
@@ -1247,6 +1418,82 @@ body {
 .projects__grid .project-card:nth-child(6) {
   transition-delay: 0.24s;
 }
+
+/* =========================
+   FILTROS PROYECTOS
+========================= */
+
+.projects__filters {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin: 0 0 45px;
+  padding-bottom: 25px;
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+}
+
+
+.filter-btn {
+  position: relative;
+
+  padding: 11px 16px;
+
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 100px;
+
+  background: transparent;
+
+  color: #111;
+
+  font-family: inherit;
+
+  font-size: 0.62rem;
+
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.filter-btn span {
+  margin-left: 6px;
+
+  font-size: 0.5rem;
+
+  opacity: 0.45;
+}
+
+
+.filter-btn:hover {
+  transform: translateY(-2px);
+
+  background: #111;
+  color: #fff;
+}
+
+
+.filter-btn.active {
+  background: #111;
+  color: #fff;
+}
+
+
+/* tarjeta ocultándose */
+
+.project-card.is-hidden {
+  display: none;
+}
+
 
 /* =========================
    RESPONSIVE

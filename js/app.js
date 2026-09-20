@@ -45,3 +45,39 @@ window.addEventListener("scroll", () => {
   }
 
 });
+
+/* =========================
+   FILTROS DE PROYECTOS
+========================= */
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+const projectCards = document.querySelectorAll(".project-card");
+
+filterButtons.forEach((button) => {
+
+  button.addEventListener("click", () => {
+
+    const filter = button.dataset.filter;
+
+    filterButtons.forEach((btn) => {
+      btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+
+    projectCards.forEach((card) => {
+
+      const category = card.dataset.category;
+
+      if (filter === "all" || category === filter) {
+        card.classList.remove("is-hidden");
+      } else {
+        card.classList.add("is-hidden");
+      }
+
+    });
+
+  });
+
+});
