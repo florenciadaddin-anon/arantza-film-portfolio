@@ -47,70 +47,83 @@
 
   <main>
 
-  <section class="hero">
+<section class="hero">
 
-  <div class="hero__meta">
-    <span>Realización Audiovisual</span>
-    <span>Portfolio / 2026</span>
+  <!-- FOTO DE RODAJE -->
+  <div class="hero__media">
+    <img
+      src="assets/fotohero.jpg"
+      alt="Rodaje de una producción audiovisual"
+    >
   </div>
 
+  <!-- Tratamiento cinematográfico -->
+  <div class="hero__grade" aria-hidden="true"></div>
 
-  <div class="hero__composition">
+  <!-- Marco / viewfinder -->
+  <div class="hero__viewfinder" aria-hidden="true">
+    <span class="hero__corner hero__corner--tl"></span>
+    <span class="hero__corner hero__corner--tr"></span>
+    <span class="hero__corner hero__corner--bl"></span>
+    <span class="hero__corner hero__corner--br"></span>
+  </div>
 
-    <h1 class="hero__name hero__name--top">
-      ARANTZA
-    </h1>
-
-
-    <figure class="hero__portrait">
-
-      <img
-        src="assets/Presentación Portfolio Arantza Fernández Barrenechea.png"
-        alt="Retrato de Arantza Barrenechea"
-      >
-
-      <figcaption>
-        Buenos Aires · Argentina
-      </figcaption>
-
-    </figure>
-
-
-    <h1 class="hero__name hero__name--bottom">
-      BARRENECHEA
-    </h1>
-
-
-    <div class="hero__roles">
-      <span>Producción</span>
-      <span>Audiovisual</span>
+  <!-- Datos superiores -->
+  <div class="hero__top">
+    <div class="hero__rec">
+      <span class="hero__rec-dot"></span>
+      <span>REC</span>
     </div>
 
+    <span class="hero__portfolio">
+      Portfolio / 2026
+    </span>
   </div>
 
+  <!-- CENTRO -->
+  <div class="hero__content">
 
-  <a href="#trabajos" class="hero__work">
-    Ver trabajos
-    <span>↘</span>
+    <div class="hero__profession">
+      <span></span>
+      <p>Producción Audiovisual</p>
+      <span></span>
+    </div>
+
+    <h1 class="hero__name">
+      <span class="hero__name-first">ARANTZA</span>
+      <span class="hero__name-last">BARRENECHEA</span>
+    </h1>
+
+   
+
+  </div>
+
+  <!-- DATOS INFERIORES -->
+  <div class="hero__technical hero__technical--left">
+    <span>TC 00:01:24:18</span>
+    <span class="hero__technical-corner"></span>
+    <span>Buenos Aires / ARG</span>
+  </div>
+
+  <div class="hero__technical hero__technical--right">
+    <span>16:9 / Digital</span>
+    <span class="hero__technical-corner"></span>
+  </div>
+
+  <!-- CTA CENTRAL -->
+  <a href="#trabajos" class="hero__explore">
+    <span>Explorar trabajos</span>
+    <span class="hero__explore-line"></span>
+    <span class="hero__explore-arrow">↘</span>
   </a>
 
-
-  <a href="#trabajos" class="scroll-indicator">
-
-    <span class="scroll-indicator__text">
-      Scroll
-    </span>
-
-    <span class="scroll-indicator__line"></span>
-
-    <span class="scroll-indicator__arrow">
-      ↓
-    </span>
-
+  <!-- ÚNICO SCROLL -->
+  <a href="#trabajos" class="hero__scroll">
+    <span>Scroll</span>
+    <span class="hero__scroll-arrow">↓</span>
   </a>
 
 </section>
-
 
    <section id="trabajos" class="projects">
 

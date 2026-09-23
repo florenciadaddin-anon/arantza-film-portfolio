@@ -212,381 +212,714 @@ body {
 
   border-bottom-color: rgba(255, 255, 255, 0.12);
 }
-/* =========================
+
+
+
+/* ========================================
+   HERO V4 — CINEMATIC PORTFOLIO
+======================================== */
+
+:root {
+  --black: #080808;
+  --wine: #7a1f35;
+  --ivory: #f3efe7;
+}
+
+
+/* ========================================
    HERO
-========================= */
-/* =========================
-   HERO
-========================= */
+======================================== */
 
 .hero {
   position: relative;
 
-  min-height: 100vh;
+  width: 100%;
+  height: 100svh;
+  min-height: 700px;
 
-  padding: 135px 6% 45px;
+  padding: 125px 4% 38px;
 
-  background: #0b0b0b;
-  color: #ffffff;
+  background: var(--black);
+  color: var(--ivory);
 
   overflow: hidden;
 }
 
 
-/* META SUPERIOR */
+/* ========================================
+   FOTOGRAFÍA
+======================================== */
 
-.hero__meta {
-  display: flex;
-  justify-content: space-between;
-
-  font-size: 0.58rem;
-
-  text-transform: uppercase;
-  letter-spacing: 3px;
-
-  color: rgba(255, 255, 255, 0.5);
-}
-
-
-/* COMPOSICIÓN CENTRAL */
-
-.hero__composition {
-  position: relative;
-
-  width: min(1050px, 82vw);
-  height: calc(100vh - 220px);
-
-  min-height: 600px;
-
-  margin: 20px auto 0;
-}
-
-
-/* FOTO */
-
-.hero__portrait {
+.hero__media {
   position: absolute;
+  inset: 0;
 
-  z-index: 2;
-
-  top: 50%;
-  left: 50%;
-
-  width: clamp(280px, 28vw, 430px);
-  height: min(62vh, 650px);
-
-  margin: 0;
-
-  transform: translate(-50%, -50%);
+  z-index: 0;
 
   overflow: hidden;
+
+  background: #080808;
 }
 
 
-.hero__portrait img {
+.hero__media img {
   width: 100%;
   height: 100%;
 
   display: block;
 
   object-fit: cover;
-  object-position: center 35%;
 
-  transition:
-    transform 1.2s cubic-bezier(0.22, 1, 0.36, 1),
-    filter 0.8s ease;
+  /*
+     IMPORTANTE:
+     esta propiedad la vamos a ajustar
+     según cómo quede TU foto.
+  */
+  object-position: center 52%;
+
+  transform: scale(1.035);
+
+  filter:
+    brightness(0.52)
+    contrast(1.12)
+    saturate(0.82);
+
+  animation:
+    heroImageEnter 1.8s
+    cubic-bezier(.22, 1, .36, 1)
+    forwards;
 }
 
 
-.hero__portrait:hover img {
-  transform: scale(1.025);
-}
+/* ========================================
+   COLOR GRADING
+======================================== */
 
-
-.hero__portrait figcaption {
+.hero__grade {
   position: absolute;
+  inset: 0;
 
-  left: 15px;
-  bottom: 14px;
-
-  z-index: 3;
-
-  font-size: 0.52rem;
-
-  text-transform: uppercase;
-  letter-spacing: 2px;
-
-  color: rgba(255, 255, 255, 0.75);
-}
-
-
-/* NOMBRE */
-
-.hero__name {
-  position: absolute;
-
-  z-index: 3;
-
-  margin: 0;
-
-  font-family: Georgia, "Times New Roman", serif;
-
-  font-size: clamp(5rem, 10vw, 10rem);
-
-  font-weight: 400;
-  font-style: italic;
-
-  line-height: 0.8;
-
-  letter-spacing: -7px;
-
-  white-space: nowrap;
+  z-index: 1;
 
   pointer-events: none;
+
+  background:
+
+    /* Bordó lateral */
+    radial-gradient(
+      ellipse at 4% 48%,
+      rgba(122, 31, 53, .58) 0%,
+      rgba(122, 31, 53, .22) 25%,
+      transparent 48%
+    ),
+
+    /* Oscurecimiento inferior */
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, .15) 0%,
+      rgba(0, 0, 0, .05) 42%,
+      rgba(0, 0, 0, .62) 100%
+    ),
+
+    /* Bordes cinematográficos */
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, .28),
+      transparent 28%,
+      transparent 70%,
+      rgba(0, 0, 0, .38)
+    );
 }
 
 
-.hero__name--top {
-  top: 8%;
+/* ========================================
+   VIEWFINDER
+======================================== */
+
+.hero__viewfinder {
+  position: absolute;
+
+  inset: 145px 4% 75px;
+
+  z-index: 3;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  animation:
+    heroFadeIn .8s ease
+    1.1s forwards;
+}
+
+
+.hero__corner {
+  position: absolute;
+
+  width: 30px;
+  height: 30px;
+
+  opacity: .65;
+}
+
+
+.hero__corner--tl {
+  top: 0;
   left: 0;
+
+  border-top: 1px solid rgba(255,255,255,.8);
+  border-left: 1px solid rgba(255,255,255,.8);
 }
 
 
-.hero__name--bottom {
+.hero__corner--tr {
+  top: 0;
   right: 0;
-  bottom: 6%;
+
+  border-top: 1px solid rgba(255,255,255,.8);
+  border-right: 1px solid rgba(255,255,255,.8);
 }
 
 
-/* ROLES */
+.hero__corner--bl {
+  bottom: 0;
+  left: 0;
 
-.hero__roles {
-  position: absolute;
+  border-bottom: 1px solid rgba(255,255,255,.8);
+  border-left: 1px solid rgba(255,255,255,.8);
+}
 
-  z-index: 4;
 
+.hero__corner--br {
   right: 0;
-  top: 43%;
+  bottom: 0;
+
+  border-right: 1px solid rgba(255,255,255,.8);
+  border-bottom: 1px solid rgba(255,255,255,.8);
+}
+
+
+/* ========================================
+   REC + PORTFOLIO
+======================================== */
+
+.hero__top {
+  position: relative;
+
+  z-index: 6;
 
   display: flex;
-  flex-direction: column;
-
-  gap: 7px;
-
-  font-size: 0.62rem;
-
-  text-transform: uppercase;
-  letter-spacing: 3px;
-
-  color: rgba(255, 255, 255, 0.75);
-}
-
-
-/* VER TRABAJOS */
-
-.hero__work {
-  position: absolute;
-
-  left: 6%;
-  bottom: 45px;
-
-  display: flex;
+  justify-content: space-between;
   align-items: center;
 
-  gap: 15px;
+  font-size: .55rem;
 
-  color: #ffffff;
+  font-weight: 600;
 
-  font-size: 0.62rem;
-
-  text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 3px;
 }
 
 
-.hero__work span {
-  font-size: 1rem;
-
-  transition: transform 0.3s ease;
-}
-
-
-.hero__work:hover span {
-  transform: translate(5px, 5px);
-}
-/* =========================
-   HERO INTRO
-========================= */
-
-.hero__portrait {
-  opacity: 0;
-
-  animation:
-    portraitEnter 1.2s
-    cubic-bezier(0.22, 1, 0.36, 1)
-    0.25s forwards;
-}
-
-
-.hero__name--top {
-  opacity: 0;
-
-  animation:
-    nameEnterLeft 1.1s
-    cubic-bezier(0.22, 1, 0.36, 1)
-    0.5s forwards;
-}
-
-
-.hero__name--bottom {
-  opacity: 0;
-
-  animation:
-    nameEnterRight 1.1s
-    cubic-bezier(0.22, 1, 0.36, 1)
-    0.65s forwards;
-}
-
-
-.hero__roles {
-  opacity: 0;
-
-  animation:
-    heroFade 0.8s ease
-    0.9s forwards;
-}
-
-
-@keyframes portraitEnter {
-
-  from {
-    opacity: 0;
-    transform: translate(-50%, -45%) scale(0.96);
-  }
-
-  to {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-
-}
-
-
-@keyframes nameEnterLeft {
-
-  from {
-    opacity: 0;
-    transform: translateX(-60px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-}
-
-
-@keyframes nameEnterRight {
-
-  from {
-    opacity: 0;
-    transform: translateX(60px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-}
-
-/* =========================
-   SCROLL INDICATOR
-========================= */
-
-.scroll-indicator {
-  position: absolute;
-
-  right: 5%;
-  bottom: 35px;
-
-  z-index: 5;
-
+.hero__rec {
   display: flex;
-  flex-direction: column;
+
   align-items: center;
 
   gap: 10px;
-
-  color: #ffffff;
-  text-decoration: none;
 }
 
 
-.scroll-indicator__text {
-  font-size: 0.55rem;
+.hero__rec-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--wine);
+
+  box-shadow:
+    0 0 16px rgba(122, 31, 53, .9);
+
+  animation:
+    recPulse 1.7s ease-in-out infinite;
+}
+
+
+.hero__portfolio {
+  color: rgba(255,255,255,.7);
+}
+
+
+/* ========================================
+   COMPOSICIÓN CENTRAL
+======================================== */
+
+.hero__content {
+  position: absolute;
+
+  z-index: 5;
+
+  top: 49%;
+  left: 50%;
+
+  width: min(1050px, 72vw);
+
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+}
+
+
+/* PRODUCCIÓN AUDIOVISUAL */
+
+.hero__profession {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 25px;
+
+  margin-bottom: 22px;
+
+  opacity: 0;
+
+  animation:
+    heroSmallEnter .8s ease
+    .75s forwards;
+}
+
+
+.hero__profession span {
+  width: 90px;
+  height: 1px;
+
+  background: rgba(255,255,255,.55);
+}
+
+
+.hero__profession p {
+  margin: 0;
+
+  font-size: clamp(.55rem, .7vw, .75rem);
+
+  font-weight: 600;
 
   text-transform: uppercase;
-  letter-spacing: 4px;
 
-  writing-mode: vertical-rl;
+  letter-spacing: 6px;
 
-  opacity: 0.65;
+  white-space: nowrap;
 }
 
 
-.scroll-indicator__line {
+/* ========================================
+   ARANTZA BARRENECHEA
+======================================== */
+
+.hero__name {
+  margin: 0;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  text-transform: uppercase;
+}
+
+
+.hero__name span {
+  display: block;
+
+  white-space: nowrap;
+}
+
+
+/* ARANTZA GRANDE */
+
+.hero__name-first {
+  font-size: clamp(6rem, 10.7vw, 11.8rem);
+
+  font-weight: 800;
+
+  line-height: .76;
+
+  letter-spacing: -8px;
+
+  color: var(--ivory);
+
+  opacity: 0;
+
+  transform: translateY(55px);
+
+  animation:
+    heroNameEnter 1.05s
+    cubic-bezier(.22, 1, .36, 1)
+    .35s forwards;
+}
+
+
+/* BARRENECHEA OUTLINE */
+
+.hero__name-last {
+  margin-top: 14px;
+
+  font-size: clamp(4.2rem, 7.7vw, 8.5rem);
+
+  font-weight: 700;
+
+  line-height: .78;
+
+  letter-spacing: -6px;
+
+  color: transparent;
+
+  -webkit-text-stroke:
+    1.5px rgba(243, 239, 231, .9);
+
+  opacity: 0;
+
+  transform: translateY(45px);
+
+  animation:
+    heroNameEnter 1.05s
+    cubic-bezier(.22, 1, .36, 1)
+    .48s forwards;
+}
+
+
+/* ========================================
+   PRODUCCIÓN × ARTE × EDICIÓN
+======================================== */
+
+.hero__disciplines {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 25px;
+
+  margin-top: 32px;
+
+  font-size: .58rem;
+
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  letter-spacing: 4px;
+
+  opacity: 0;
+
+  animation:
+    heroSmallEnter .8s ease
+    .9s forwards;
+}
+
+
+.hero__disciplines i {
+  color: var(--wine);
+
+  font-size: .85rem;
+
+  font-style: normal;
+}
+
+
+/* ========================================
+   INFORMACIÓN TÉCNICA
+======================================== */
+
+.hero__technical {
+  position: absolute;
+
+  z-index: 6;
+
+  bottom: 66px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+
+  font-size: .48rem;
+
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  letter-spacing: 3px;
+
+  color: rgba(255,255,255,.65);
+}
+
+
+.hero__technical--left {
+  left: 4%;
+}
+
+
+.hero__technical--right {
+  right: 4%;
+
+  align-items: flex-end;
+}
+
+
+/* mini esquina técnica */
+
+.hero__technical-corner {
+  width: 30px;
+  height: 30px;
+
+  border-left:
+    1px solid rgba(255,255,255,.7);
+
+  border-bottom:
+    1px solid rgba(255,255,255,.7);
+}
+
+
+.hero__technical--right
+.hero__technical-corner {
+  border-left: 0;
+
+  border-right:
+    1px solid rgba(255,255,255,.7);
+}
+
+
+/* ========================================
+   EXPLORE
+======================================== */
+
+.hero__explore {
+  position: absolute;
+
+  z-index: 8;
+
+  left: 50%;
+  bottom: 43px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 17px;
+
+  color: var(--ivory);
+
+  text-decoration: none;
+
+  font-size: .56rem;
+
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  letter-spacing: 3px;
+}
+
+
+.hero__explore-line {
   position: relative;
 
-  width: 1px;
-  height: 55px;
+  width: 75px;
+  height: 1px;
 
   overflow: hidden;
 
-  background: rgba(255, 255, 255, 0.25);
+  background:
+    rgba(255,255,255,.55);
+
+  transition:
+    width .4s
+    cubic-bezier(.22,1,.36,1);
 }
 
 
-/* luz que recorre la línea */
-
-.scroll-indicator__line::after {
+.hero__explore-line::after {
   content: "";
 
   position: absolute;
 
-  top: -100%;
-  left: 0;
+  inset: 0;
 
-  width: 100%;
-  height: 70%;
+  background: var(--wine);
 
-  background: #ffffff;
+  transform: translateX(-100%);
 
-  animation: scrollLine 2s ease-in-out infinite;
+  transition:
+    transform .4s
+    cubic-bezier(.22,1,.36,1);
 }
 
 
-.scroll-indicator__arrow {
-  font-size: 1.2rem;
-
-  animation: scrollArrow 1.8s ease-in-out infinite;
+.hero__explore:hover
+.hero__explore-line {
+  width: 105px;
 }
 
 
-@keyframes scrollLine {
+.hero__explore:hover
+.hero__explore-line::after {
+  transform: translateX(0);
+}
+
+
+.hero__explore-arrow {
+  font-size: 1rem;
+
+  transition:
+    transform .35s ease;
+}
+
+
+.hero__explore:hover
+.hero__explore-arrow {
+  transform: translate(5px, 5px);
+}
+
+
+/* ========================================
+   ÚNICO SCROLL
+======================================== */
+
+.hero__scroll {
+  position: absolute;
+
+  z-index: 8;
+
+  right: 4%;
+  bottom: 34px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 12px;
+
+  color: rgba(255,255,255,.7);
+
+  text-decoration: none;
+
+  font-size: .48rem;
+
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  letter-spacing: 4px;
+}
+
+
+.hero__scroll-arrow {
+  color: var(--wine);
+
+  font-size: 1rem;
+
+  animation:
+    scrollArrow 1.8s
+    ease-in-out infinite;
+}
+
+
+/* ========================================
+   ANIMACIONES
+======================================== */
+
+@keyframes heroImageEnter {
 
   0% {
-    top: -100%;
-  }
+    transform: scale(1.12);
 
-  60% {
-    top: 100%;
+    filter:
+      blur(12px)
+      brightness(.38)
+      saturate(.6);
   }
 
   100% {
-    top: 100%;
+    transform: scale(1.035);
+
+    filter:
+      blur(0)
+      brightness(.52)
+      contrast(1.12)
+      saturate(.82);
+  }
+
+}
+
+
+@keyframes heroNameEnter {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(55px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+@keyframes heroSmallEnter {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+@keyframes heroFadeIn {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+
+@keyframes recPulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .25;
   }
 
 }
@@ -596,14 +929,18 @@ body {
 
   0%,
   100% {
-    transform: translateY(0);
+    transform:
+      translateY(0);
   }
 
   50% {
-    transform: translateY(7px);
+    transform:
+      translateY(6px);
   }
 
 }
+
+
 /* =========================
    PROJECTS
 ========================= */
