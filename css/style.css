@@ -221,7 +221,7 @@ body {
 
 :root {
   --black: #080808;
-  --wine: #7a1f35;
+  --wine: #610f0f;
   --ivory: #f3efe7;
 }
 
@@ -590,43 +590,6 @@ body {
 }
 
 
-/* ========================================
-   PRODUCCIÓN × ARTE × EDICIÓN
-======================================== */
-
-.hero__disciplines {
-  display: flex;
-
-  justify-content: center;
-  align-items: center;
-
-  gap: 25px;
-
-  margin-top: 32px;
-
-  font-size: .58rem;
-
-  font-weight: 600;
-
-  text-transform: uppercase;
-
-  letter-spacing: 4px;
-
-  opacity: 0;
-
-  animation:
-    heroSmallEnter .8s ease
-    .9s forwards;
-}
-
-
-.hero__disciplines i {
-  color: var(--wine);
-
-  font-size: .85rem;
-
-  font-style: normal;
-}
 
 
 /* ========================================
@@ -1124,211 +1087,365 @@ body {
   transform: scale(1.08);
 }
 
-
-/* =========================
-   SOBRE MI
-========================= */
+/* ========================================
+   SOBRE MÍ — EDITORIAL / CINEMATIC
+======================================== */
 
 .about {
   position: relative;
-
   padding: 110px 6% 0;
-
   background: #0b0b0b;
-  color: #ffffff;
-
+  color: var(--ivory);
   overflow: hidden;
 }
 
 
-/* =========================
-   CABECERA DE SECCION
-========================= */
+/* ---------- CABECERA ---------- */
 
 .about__header {
+  position: relative;
+  z-index: 10;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   padding-bottom: 18px;
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
-  font-size: 0.62rem;
+  font-size: 0.58rem;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 3px;
 
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.about__header span:first-child {
+  color: #c06a7d;
 }
 
 
-/* =========================
-   TITULO
-========================= */
+/* ========================================
+   COMPOSICIÓN PRINCIPAL
+======================================== */
 
-/* =========================
-   INTRO SOBRE MI
-========================= */
-
-.about__intro {
-  display: grid;
-
-  grid-template-columns: 1fr 1.2fr;
-
-  gap: 80px;
-
-  align-items: end;
-
-  padding: 90px 8% 60px;
-}
-
-
-/* TITULO */
-
-.about__intro-title span {
-  display: block;
-
-  margin-bottom: 15px;
-
-  font-size: 0.6rem;
-
-  text-transform: uppercase;
-  letter-spacing: 4px;
-
-  color: rgba(255, 255, 255, 0.4);
-}
-
-
-.about__intro-title h2 {
-  font-family: Georgia, "Times New Roman", serif;
-
-  font-size: clamp(3rem, 5vw, 5.5rem);
-
-  font-weight: 400;
-  font-style: italic;
-
-  line-height: 1;
-
-  letter-spacing: -2px;
-}
-
-
-/* FRASE */
-
-.about__intro-text {
-  max-width: 600px;
-
-  font-size: clamp(1.1rem, 1.8vw, 1.6rem);
-
-  line-height: 1.45;
-
-  color: rgba(255, 255, 255, 0.65);
-}
-
-
-/* =========================
-   FOTO / FOTOGRAMA
-========================= */
-
-.about__frame {
+.about__portrait-section {
   position: relative;
 
-  width: 82%;
-  height: 650px;
+  min-height: 900px;
 
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns:
+    minmax(320px, 0.9fr)
+    minmax(350px, 0.8fr);
 
-  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+
+  gap: clamp(70px, 10vw, 170px);
+
+  padding: 140px 5% 120px;
 }
 
-.about__frame::before {
+
+/* ---------- BLOQUE BORDÓ ---------- */
+
+.about__wine-block {
+  position: absolute;
+  z-index: 0;
+
+  top: 50%;
+  left: -9%;
+
+  width: 72%;
+  height: 55%;
+
+  background: var(--wine);
+
+  transform:
+    translateY(-50%)
+    rotate(-3deg);
+
+  box-shadow:
+    0 40px 100px rgba(0, 0, 0, 0.35);
+}
+
+
+/* ---------- PALABRA DE FONDO ---------- */
+
+.about__background-word {
+  position: absolute;
+  z-index: 1;
+
+  top: 48%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: clamp(9rem, 20vw, 23rem);
+  font-weight: 800;
+
+  line-height: 0.8;
+  letter-spacing: -15px;
+
+  color: rgba(255, 255, 255, 0.055);
+
+  white-space: nowrap;
+
+  pointer-events: none;
+  user-select: none;
+}
+
+
+/* ========================================
+   FOTO
+======================================== */
+
+.about__portrait {
+  position: relative;
+  z-index: 4;
+
+  width: min(430px, 100%);
+
+  margin: 0 auto;
+}
+
+
+/* marco desplazado */
+
+.about__portrait::before {
   content: "";
 
   position: absolute;
-  inset: 0;
 
-  z-index: 2;
+  top: -14px;
+  left: -14px;
 
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.05),
-    rgba(0, 0, 0, 0.35)
-  );
+  width: calc(100% + 28px);
+  height: calc(100% + 28px);
+
+  z-index: 5;
+
+  border: 1px solid rgba(243, 239, 231, 0.65);
 
   pointer-events: none;
 }
 
-.about__frame img {
+
+.about__portrait img {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 3 / 4;
 
   display: block;
 
   object-fit: cover;
+  object-position: center;
 
-  filter: grayscale(15%) contrast(1.05);
+  filter:
+    saturate(0.82)
+    contrast(1.06);
 
   transition:
-    transform 1.2s ease,
+    transform 0.8s cubic-bezier(.22, 1, .36, 1),
     filter 0.8s ease;
 }
 
 
-/* movimiento muy sutil */
+.about__portrait:hover img {
+  transform: scale(1.015);
 
-.about__frame:hover img {
-  transform: scale(1.025);
-
-  filter: grayscale(0%) contrast(1);
+  filter:
+    saturate(1)
+    contrast(1.04);
 }
 
 
-/* texto sobre la foto */
+/* pie de foto */
 
-.about__frame figcaption {
-  position: absolute;
+.about__portrait figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
 
-  z-index: 3;
+  margin-top: 16px;
 
-  left: 20px;
-  bottom: 18px;
-
-  font-size: 0.6rem;
+  font-size: 0.5rem;
+  font-weight: 600;
 
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 
-/* =========================
-   INFORMACION
-========================= */
+/* ========================================
+   TEXTO / HISTORIA
+======================================== */
 
-.about__details {
-  width: 82%;
+.about__story {
+  position: relative;
+  z-index: 5;
 
-  margin: 0 auto;
+  max-width: 560px;
+}
+
+
+.about__story-index {
+  display: block;
+
+  margin-bottom: 32px;
+
+  font-size: 0.55rem;
+  font-weight: 600;
+
+  text-transform: uppercase;
+  letter-spacing: 4px;
+
+  color: #c06a7d;
+}
+
+
+.about__story h2 {
+  margin: 0 0 45px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(3.2rem, 5vw, 5.8rem);
+  font-weight: 400;
+
+  line-height: 0.93;
+
+  letter-spacing: -4px;
+}
+
+
+.about__story h2 em {
+  display: inline-block;
+
+  color: #d78496;
+
+  font-weight: 400;
+}
+
+
+.about__story p {
+  max-width: 480px;
+
+  margin: 0 0 22px;
+
+  font-size: 0.92rem;
+  line-height: 1.85;
+
+  color: rgba(255, 255, 255, 0.7);
+}
+
+
+.about__story p:first-of-type {
+  font-size: 1.03rem;
+
+  color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* pequeña línea editorial */
+
+.about__story::after {
+  content: "";
+
+  display: block;
+
+  width: 80px;
+  height: 2px;
+
+  margin-top: 42px;
+
+  background: var(--wine);
+}
+
+
+/* ========================================
+   INFORMACIÓN INFERIOR
+======================================== */
+
+.about__information {
+  position: relative;
+  z-index: 6;
 
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
 
-  grid-template-columns: 0.7fr 1fr 1.5fr;
-
-  gap: 60px;
-
-  padding: 70px 0 110px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 
-/* títulos pequeños */
+.about__information-item {
+  min-height: 220px;
 
-.about__detail > span {
+  display: grid;
+  grid-template-columns: auto 1fr;
+
+  gap: 32px;
+
+  padding: 38px;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.18);
+
+  transition:
+    background 0.35s ease,
+    transform 0.35s ease;
+}
+
+
+.about__information-item:first-child {
+  padding-left: 0;
+}
+
+
+.about__information-item:last-child {
+  border-right: 0;
+}
+
+
+.about__information-item:hover {
+  background: rgba(122, 31, 53, 0.12);
+}
+
+
+/* números */
+
+.about__information-item > span {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 2.6rem;
+  font-style: italic;
+
+  line-height: 1;
+
+  color: #c06a7d;
+}
+
+
+/* subtítulos */
+
+.about__information-item small {
   display: block;
 
   margin-bottom: 25px;
 
-  font-size: 0.6rem;
+  font-size: 0.5rem;
+  font-weight: 600;
 
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -1337,80 +1454,202 @@ body {
 }
 
 
-/* información */
+/* contenido */
 
-.about__detail p {
-  font-size: 0.9rem;
+.about__information-item p {
+  margin: 0;
 
-  line-height: 1.8;
+  font-size: 0.86rem;
+  line-height: 1.75;
 
   color: rgba(255, 255, 255, 0.75);
 }
 
 
-/* =========================
-   FRASE DESTACADA
-========================= */
+/* ========================================
+   ANIMACIÓN DEL BLOQUE BORDÓ
+======================================== */
 
-.about__manifesto {
-  padding-left: 50px;
+.about__wine-block {
+  transform:
+    translateY(-50%)
+    rotate(-3deg)
+    scaleX(0);
 
-  border-left: 1px solid rgba(255, 255, 255, 0.2);
-}
+  transform-origin: left center;
 
-.about__manifesto p {
-  max-width: 520px;
+  animation:
+    aboutWineReveal 1.2s
+    cubic-bezier(.22, 1, .36, 1)
+    forwards;
 
-  font-family: Georgia, "Times New Roman", serif;
-
-  font-size: clamp(1.8rem, 3vw, 3rem);
-
-  font-style: italic;
-
-  line-height: 1.15;
-
-  letter-spacing: -1px;
+  animation-timeline: view();
+  animation-range: entry 10% cover 38%;
 }
 
 
-/* =========================
-   CREDITOS / FINAL
-========================= */
+@keyframes aboutWineReveal {
 
-.about__credits {
-  width: calc(100% + 12%);
+  from {
+    transform:
+      translateY(-50%)
+      rotate(-3deg)
+      scaleX(0);
+  }
 
-  margin-left: -6%;
+  to {
+    transform:
+      translateY(-50%)
+      rotate(-3deg)
+      scaleX(1);
+  }
 
-  min-height: 150px;
-
-  padding: 0 6%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  gap: clamp(20px, 4vw, 70px);
-
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-
-  font-size: clamp(1.2rem, 2.5vw, 2.8rem);
-
-  text-transform: uppercase;
-  letter-spacing: 4px;
-
-  white-space: nowrap;
 }
 
-.about__credits span:nth-child(2),
-.about__credits span:nth-child(4) {
-  font-family: Georgia, "Times New Roman", serif;
 
-  font-style: italic;
+/* ========================================
+   RESPONSIVE
+======================================== */
 
-  opacity: 0.35;
+@media (max-width: 900px) {
+
+  .about {
+    padding:
+      80px 22px 0;
+  }
+
+
+  .about__portrait-section {
+    min-height: auto;
+
+    grid-template-columns: 1fr;
+
+    gap: 80px;
+
+    padding:
+      100px 0
+      90px;
+  }
+
+
+  .about__wine-block {
+    top: 33%;
+    left: -35%;
+
+    width: 125%;
+    height: 38%;
+  }
+
+
+  .about__background-word {
+    top: 35%;
+
+    font-size: 30vw;
+
+    letter-spacing: -8px;
+  }
+
+
+  .about__portrait {
+    width: min(390px, 82vw);
+  }
+
+
+  .about__story {
+    max-width: 620px;
+  }
+
+
+  .about__story h2 {
+    font-size:
+      clamp(3.3rem, 11vw, 6rem);
+  }
+
+
+  .about__information {
+    grid-template-columns: 1fr;
+  }
+
+
+  .about__information-item {
+    min-height: auto;
+
+    padding:
+      32px 0;
+
+    border-right: 0;
+
+    border-bottom:
+      1px solid
+      rgba(255, 255, 255, 0.18);
+  }
+
+
+  .about__information-item:last-child {
+    border-bottom: 0;
+  }
+
 }
 
+
+@media (max-width: 600px) {
+
+  .about__header {
+    font-size: 0.48rem;
+
+    letter-spacing: 2px;
+  }
+
+
+  .about__header span:last-child {
+    display: none;
+  }
+
+
+  .about__portrait-section {
+    padding-top: 85px;
+  }
+
+
+  .about__portrait {
+    width: 80vw;
+  }
+
+
+  .about__story h2 {
+    letter-spacing: -2px;
+  }
+
+
+  .about__story p {
+    font-size: 0.88rem;
+  }
+
+
+  .about__information-item {
+    grid-template-columns:
+      55px 1fr;
+
+    gap: 15px;
+  }
+
+}
+
+
+/* ACCESIBILIDAD */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .about__wine-block {
+    animation: none;
+
+    transform:
+      translateY(-50%)
+      rotate(-3deg)
+      scaleX(1);
+  }
+
+}
 
 /* =========================
    CONTACTO
