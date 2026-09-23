@@ -2399,7 +2399,7 @@ body {
 
   padding: 120px 4%;
 
-  overflow: hidden;
+  overflow: visible;
   isolation: isolate;
 }
 
@@ -2856,6 +2856,40 @@ body {
 
 
 /* ========================================
+   CONTACTO — NOTEBOOK
+======================================== */
+
+@media (min-width: 901px) and (max-width: 1700px) {
+
+  .contact__stage {
+    padding-left: 2%;
+    padding-right: 2%;
+    overflow: visible;
+  }
+
+  .contact__main {
+    width: 70%;
+  }
+
+  .contact__main h2 {
+    font-size: clamp(4.8rem, 7.2vw, 7.2rem);
+    line-height: 0.82;
+    letter-spacing: -5px;
+  }
+
+  .contact__main h2 em {
+    font-size: 0.72em;
+    letter-spacing: -3px;
+  }
+
+  .contact__wine-shape {
+    width: 40%;
+    right: -7%;
+  }
+
+}
+
+/* ========================================
    TABLET
 ======================================== */
 
@@ -2940,7 +2974,7 @@ body {
   .contact__stage {
   min-height: 650px;
   padding: 80px 0 100px;
-  overflow: hidden;
+  overflow: visible;
   isolation: isolate;
 }
 
