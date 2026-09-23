@@ -1325,21 +1325,6 @@ body {
 
 
 /* ========================================
-   05 — TELEPOP
-======================================== */
-
-.project-card--telepop {
-  width: 62%;
-
-  margin-left: auto;
-}
-
-.project-card--telepop .project-card__media {
-  height: clamp(480px, 48vw, 690px);
-}
-
-
-/* ========================================
    FILTRADO
 ======================================== */
 
@@ -2415,6 +2400,7 @@ body {
   padding: 120px 4%;
 
   overflow: hidden;
+  isolation: isolate;
 }
 
 
@@ -2439,6 +2425,8 @@ body {
 
   box-shadow:
     0 40px 100px rgba(0, 0, 0, 0.16);
+
+  pointer-events: none;
 }
 
 
@@ -2950,29 +2938,35 @@ body {
   }
 
   .contact__stage {
-    min-height: 650px;
-
-    padding:
-      90px 0
-      100px;
-  }
+  min-height: 650px;
+  padding: 80px 0 100px;
+  overflow: hidden;
+  isolation: isolate;
+}
 
   .contact__wine-shape {
-    width: 90%;
-    height: 38%;
+  z-index: 0;
 
-    right: -48%;
-    top: 55%;
+  width: 72%;
+  height: 34%;
 
-    transform:
-      translateY(-50%)
-      rotate(5deg);
-  }
+  right: -48%;
+  top: 55%;
+
+  transform:
+    translateY(-50%)
+    rotate(5deg);
+
+  pointer-events: none;
+}
 
 
   .contact__main {
-    width: 100%;
-  }
+  position: relative;
+  z-index: 4;
+
+  width: 100%;
+}
 
   .contact__eyebrow {
     max-width: 270px;
@@ -2984,35 +2978,41 @@ body {
     line-height: 1.6;
     letter-spacing: 3px;
   }
+.contact__main h2 {
+  position: relative;
+  z-index: 5;
 
-  .contact__main h2 {
-    font-size:
-      clamp(4rem, 18vw, 6rem);
+  max-width: 100%;
 
-    line-height: 0.82;
+  font-size: clamp(3.25rem, 16vw, 5.3rem);
+  line-height: 0.84;
+  letter-spacing: -4px;
+}
 
-    letter-spacing: -5px;
-  }
+.contact__main h2 em {
+  position: relative;
+  z-index: 5;
 
-  .contact__main h2 em {
-    letter-spacing: -3px;
-  }
+  font-size: 0.88em;
+  letter-spacing: -2px;
+}
 
-  .contact__description {
-    max-width: 88%;
+.contact__description {
+  position: relative;
+  z-index: 5;
 
-    margin:
-      45px 0
-      0;
+  max-width: 90%;
+  margin: 42px 0 0;
 
-    font-size: 0.86rem;
-  }
+  font-size: 0.86rem;
+}
 
-  .contact__cta {
-    margin:
-      38px 0
-      0;
-  }
+.contact__cta {
+  position: relative;
+  z-index: 5;
+
+  margin: 38px 0 0;
+}
 
   .contact__technical {
     display: none;
