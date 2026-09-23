@@ -125,198 +125,345 @@
 
 </section>
 
-   <section id="trabajos" class="projects">
+  <!-- =========================
+     TRABAJOS SELECCIONADOS
+========================= -->
 
+<section id="trabajos" class="projects">
+
+  <!-- CABECERA -->
   <div class="projects__header reveal">
-    <p>Portfolio audiovisual</p>
+
+    <div class="projects__header-top">
+      <span>01 / Portfolio audiovisual</span>
+      <span>Buenos Aires / 2024—2026</span>
+    </div>
 
     <div class="projects__title-row">
-      <h2>Trabajos Seleccionados</h2>
-      <span>2024 — 2026</span>
+      <h2>
+        Trabajos<br>
+        <em>Seleccionados</em>
+      </h2>
+
+      <span class="projects__count">(05)</span>
     </div>
+
   </div>
-<div class="projects__filters reveal">
 
-  <button class="filter-btn active" data-filter="all">
-    Todos <span>06</span>
-  </button>
 
-  <button class="filter-btn" data-filter="cortometraje">
-    Cortometrajes <span>03</span>
-  </button>
+  <!-- FILTROS -->
+  <div class="projects__filters reveal">
 
-  <button class="filter-btn" data-filter="videoclip">
-    Videoclips <span>01</span>
-  </button>
+    <button class="filter-btn active" data-filter="all">
+      Todos <span>05</span>
+    </button>
 
-  <button class="filter-btn" data-filter="pelicula">
-    Películas <span>01</span>
-  </button>
+    <button class="filter-btn" data-filter="cortometraje">
+      Cortometrajes <span>02</span>
+    </button>
 
-  <button class="filter-btn" data-filter="publicidad">
-    Publicidad <span>01</span>
-  </button>
+    <button class="filter-btn" data-filter="videoclip">
+      Videoclips <span>02</span>
+    </button>
 
-</div>
-  <div class="projects__grid">
+    <button class="filter-btn" data-filter="pelicula">
+      Películas <span>01</span>
+    </button>
 
-    <!-- PUTAS -->
-    <article class="project-card project-card--wide reveal"
-    data-category="pelicula">
-      <img
-        src="assets/putas.png"
-        alt="PUTAS"
-        class="project-card__image"
+  </div>
+
+
+  <!-- =========================
+       GALERÍA
+  ========================= -->
+
+  <div class="projects__gallery">
+
+
+    <!-- 01 / PUTAS -->
+
+    <article
+      class="project-card project-card--hero reveal"
+      data-category="pelicula"
+    >
+
+      <a
+        href="https://www.youtube.com/watch?v=b0Lr3hvaFAo"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="project-card__link"
+        aria-label="Ver PUTAS"
       >
 
-      <div class="project-card__overlay">
-        <div>
-          <p class="project-card__category">Película</p>
-          <h3>PUTAS</h3>
+        <div class="project-card__media">
+
+          <img
+            src="assets/putas.png"
+            alt="PUTAS"
+            class="project-card__image"
+          >
+
+          <div class="project-card__hover">
+
+            <span>Ver proyecto</span>
+
+            <span class="project-card__hover-line"></span>
+
+            <span>↗</span>
+
+          </div>
+
         </div>
 
-        <a
-          class="project-card__play"
-          href="https://www.youtube.com/watch?v=b0Lr3hvaFAo"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Ver PUTAS en YouTube"
-        >
-          ▶
-        </a>
-      </div>
+
+        <div class="project-card__info">
+
+          <span class="project-card__number">
+            01
+          </span>
+
+          <div class="project-card__name">
+            <h3>PUTAS</h3>
+            <p>Película</p>
+          </div>
+
+          <span class="project-card__arrow">
+            ↗
+          </span>
+
+        </div>
+
+      </a>
+
     </article>
 
 
-    <!-- HOME EN SOLEDAD -->
-    <article class="project-card reveal"
-    data-category="videoclip">
-      <img
-        src="assets/soledad.png"
-        alt="Home en Soledad"
-        class="project-card__image"
+
+    <!-- FILA 02 + 03 -->
+
+    <div class="projects__duo">
+
+
+      <!-- 02 / HOME EN SOLEDAD -->
+
+      <article
+        class="project-card project-card--portrait reveal-left"
+        data-category="videoclip"
       >
 
-      <div class="project-card__overlay">
-        <div>
-          <p class="project-card__category">Videoclip</p>
-          <h3>Home en Soledad</h3>
-        </div>
-
         <a
-          class="project-card__play"
           href="https://www.youtube.com/watch?v=rXtnnJJGWVY"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Ver Home en Soledad en YouTube"
+          class="project-card__link"
+          aria-label="Ver Home en Soledad"
         >
-          ▶
+
+          <div class="project-card__media">
+
+            <img
+              src="assets/soledad.png"
+              alt="Home en Soledad"
+              class="project-card__image"
+            >
+
+            <div class="project-card__hover">
+              <span>Ver proyecto</span>
+              <span class="project-card__hover-line"></span>
+              <span>↗</span>
+            </div>
+
+          </div>
+
+
+          <div class="project-card__info">
+
+            <span class="project-card__number">
+              02
+            </span>
+
+            <div class="project-card__name">
+              <h3>Home en Soledad</h3>
+              <p>Videoclip</p>
+            </div>
+
+            <span class="project-card__arrow">
+              ↗
+            </span>
+
+          </div>
+
         </a>
-      </div>
-    </article>
+
+      </article>
 
 
-    <!-- DULCE DESPEDIDA -->
-    <article class="project-card reveal"
-    data-category="cortometraje">
-      <img
-        src="assets/DD.png"
-        alt="Dulce Despedida"
-        class="project-card__image"
+
+      <!-- 03 / DULCE DESPEDIDA -->
+
+      <article
+        class="project-card project-card--landscape reveal-right"
+        data-category="cortometraje"
       >
 
-      <div class="project-card__overlay">
-        <div>
-          <p class="project-card__category">Cortometraje</p>
-          <h3>Dulce Despedida</h3>
-        </div>
-
         <a
-          class="project-card__play"
           href="https://www.youtube.com/watch?v=pIqEPsuAvkA&t=15s"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Ver Dulce Despedida en YouTube"
+          class="project-card__link"
+          aria-label="Ver Dulce Despedida"
         >
-          ▶
+
+          <div class="project-card__media">
+
+            <img
+              src="assets/DD.png"
+              alt="Dulce Despedida"
+              class="project-card__image"
+            >
+
+            <div class="project-card__hover">
+              <span>Ver proyecto</span>
+              <span class="project-card__hover-line"></span>
+              <span>↗</span>
+            </div>
+
+          </div>
+
+
+          <div class="project-card__info">
+
+            <span class="project-card__number">
+              03
+            </span>
+
+            <div class="project-card__name">
+              <h3>Dulce Despedida</h3>
+              <p>Cortometraje</p>
+            </div>
+
+            <span class="project-card__arrow">
+              ↗
+            </span>
+
+          </div>
+
         </a>
-      </div>
-    </article>
+
+      </article>
+
+    </div>
 
 
-    <!-- BOCETO -->
-    <article class="project-card project-card--wide reveal"
-    data-category="cortometraje">
-      <img
-        src="assets/boceto.png"
-        alt="Boceto"
-        class="project-card__image"
+
+    <!-- 04 / BOCETO -->
+
+    <article
+      class="project-card project-card--boceto reveal"
+      data-category="cortometraje"
+    >
+
+      <a
+        href="https://www.youtube.com/watch?v=GvdKke3KTXs&t=3s"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="project-card__link"
+        aria-label="Ver Boceto"
       >
 
-      <div class="project-card__overlay">
-        <div>
-          <p class="project-card__category">Cortometraje</p>
-          <h3>Boceto</h3>
+        <div class="project-card__media">
+
+          <img
+            src="assets/boceto.png"
+            alt="Boceto"
+            class="project-card__image"
+          >
+
+          <div class="project-card__hover">
+            <span>Ver proyecto</span>
+            <span class="project-card__hover-line"></span>
+            <span>↗</span>
+          </div>
+
         </div>
 
-        <a
-          class="project-card__play"
-          href="https://www.youtube.com/watch?v=GvdKke3KTXs&t=3s"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Ver Boceto en YouTube"
-        >
-          ▶
-        </a>
-      </div>
+
+        <div class="project-card__info">
+
+          <span class="project-card__number">
+            04
+          </span>
+
+          <div class="project-card__name">
+            <h3>Boceto</h3>
+            <p>Cortometraje</p>
+          </div>
+
+          <span class="project-card__arrow">
+            ↗
+          </span>
+
+        </div>
+
+      </a>
+
     </article>
 
 
-    <!-- TELEPOP / NO ME ACUERDO -->
-    <article class="project-card project-card--large reveal"
-    data-category="videoclip">
-      <img
-        src="assets/telepop.png"
-        alt="Telepop"
-        class="project-card__image"
+
+    <!-- 05 / TELEPOP -->
+
+    <article
+      class="project-card project-card--telepop reveal-right"
+      data-category="videoclip"
+    >
+
+      <a
+        href="https://youtu.be/1zKiiBhqfL0?si=NY3ljNVUbmveN8sz"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="project-card__link"
+        aria-label="Ver Telepop"
       >
 
-      <div class="project-card__overlay">
-        <div>
-          <p class="project-card__category">Videoclip</p>
-          <h3>Telepop</h3>
+        <div class="project-card__media">
+
+          <img
+            src="assets/telepop.png"
+            alt="Telepop"
+            class="project-card__image"
+          >
+
+          <div class="project-card__hover">
+            <span>Ver proyecto</span>
+            <span class="project-card__hover-line"></span>
+            <span>↗</span>
+          </div>
+
         </div>
 
-        <a
-          class="project-card__play"
-          href="https://youtu.be/1zKiiBhqfL0?si=NY3ljNVUbmveN8sz"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Ver Telepop en YouTube"
-        >
-          ▶
-        </a>
-      </div>
-    </article>
 
+        <div class="project-card__info">
 
-    <!-- PUBLICIDAD -->
-    <article class="project-card" hidden>
-      <img
-        src="assets/images/publicidad.jpg"
-        alt="Publicidad"
-        class="project-card__image"
-      >
+          <span class="project-card__number">
+            05
+          </span>
 
-      <div class="project-card__overlay">
-        <div>
-          <p class="project-card__category">Publicidad</p>
-          <h3>Original / IA</h3>
+          <div class="project-card__name">
+            <h3>Telepop</h3>
+            <p>Videoclip</p>
+          </div>
+
+          <span class="project-card__arrow">
+            ↗
+          </span>
+
         </div>
 
-        <span class="project-card__play">▶</span>
-      </div>
+      </a>
+
     </article>
+
 
   </div>
 
@@ -514,7 +661,7 @@
       <span>↗</span>
     </a>
 
-    <a href="URL-LINKEDIN" target="_blank" rel="noopener noreferrer">
+    <a href="https://www.linkedin.com/in/arantzabarrenechea/" target="_blank" rel="noopener noreferrer">
       LinkedIn
       <span>↗</span>
     </a>
