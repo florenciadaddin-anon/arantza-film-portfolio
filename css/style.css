@@ -3100,3 +3100,177 @@ body {
   }
 
 }
+/* ========================================
+   HERO — MOBILE FINAL
+======================================== */
+
+@media (max-width: 650px) {
+
+  /* HERO */
+
+  .hero {
+    height: 100svh;
+    min-height: 680px;
+
+    padding: 105px 20px 25px;
+
+    overflow: hidden;
+  }
+
+
+  /* HEADER */
+
+  .header {
+    height: 82px;
+
+    grid-template-columns: 1fr auto;
+
+    padding: 0 20px;
+  }
+
+  .header__brand {
+    font-size: 0.68rem;
+    letter-spacing: 2.5px;
+  }
+
+  .header__nav {
+    gap: 18px;
+  }
+
+  .header__nav a {
+    font-size: 0.52rem;
+    letter-spacing: 1.4px;
+  }
+
+  .header__nav a span {
+    display: none;
+  }
+
+  .header__location {
+    display: none;
+  }
+
+
+  /* VIEWFINDER */
+
+  .hero__viewfinder {
+    inset: 115px 20px 75px;
+  }
+
+
+  /* REC + PORTFOLIO */
+
+  .hero__top {
+    margin-top: 5px;
+
+    font-size: 0.48rem;
+    letter-spacing: 2.5px;
+  }
+
+
+  /* CENTRO */
+
+  .hero__content {
+    top: 49%;
+    left: 50%;
+
+    width: calc(100% - 40px);
+
+    transform: translate(-50%, -50%);
+  }
+
+
+  /* PRODUCCIÓN AUDIOVISUAL */
+
+  .hero__profession {
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .hero__profession span {
+    width: 25px;
+  }
+
+  .hero__profession p {
+    font-size: 0.48rem;
+    letter-spacing: 3.5px;
+  }
+
+
+  /* ARANTZA */
+
+  .hero__name-first {
+    font-size: clamp(4.4rem, 21vw, 6.2rem);
+
+    line-height: 0.82;
+
+    letter-spacing: -5px;
+  }
+
+
+  /* BARRENECHEA */
+
+  .hero__name-last {
+    margin-top: 10px;
+
+    font-size: clamp(2.65rem, 12.2vw, 4rem);
+
+    line-height: 0.85;
+
+    letter-spacing: -3px;
+
+    -webkit-text-stroke: 1px rgba(243, 239, 231, .9);
+  }
+
+
+  /* DATOS TÉCNICOS */
+
+  .hero__technical {
+    bottom: 70px;
+
+    gap: 8px;
+
+    font-size: 0.4rem;
+
+    letter-spacing: 2px;
+  }
+
+  .hero__technical--left {
+    left: 20px;
+  }
+
+  .hero__technical--right {
+    right: 20px;
+  }
+
+  .hero__technical-corner {
+    width: 20px;
+    height: 20px;
+  }
+
+
+  /* EXPLORAR */
+
+  .hero__explore {
+    left: 50%;
+    bottom: 28px;
+
+    gap: 10px;
+
+    font-size: 0.43rem;
+
+    letter-spacing: 2px;
+  }
+
+  .hero__explore-line {
+    width: 35px;
+  }
+
+
+  /* SCROLL */
+
+  .hero__scroll {
+    display: none;
+  }
+
+}
