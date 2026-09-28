@@ -2974,22 +2974,40 @@ body {
   isolation: isolate;
 }
 
-  .contact__wine-shape {
-  z-index: 0;
-
-  width: 72%;
-  height: 34%;
-
-  right: 4%;
-  top: 55%;
-
-  transform:
-    translateY(-50%)
-    rotate(5deg);
-
-  pointer-events: none;
+.contact__wine-shape {
+  display: none;
 }
 
+.contact__main::before {
+  content: "";
+  position: absolute;
+
+  top: 52%;
+  left: 0;
+
+  width: 70px;
+  height: 3px;
+
+  background: var(--wine);
+
+  transform-origin: left center;
+
+  animation: contactLineMobile 1s
+    cubic-bezier(.22, 1, .36, 1)
+    forwards;
+}
+
+@keyframes contactLineMobile {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+
+  to {
+    width: 70px;
+    opacity: 1;
+  }
+}
 
   .contact__main {
   position: relative;
